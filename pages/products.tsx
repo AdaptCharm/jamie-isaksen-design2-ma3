@@ -1,8 +1,8 @@
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
-import { Menu, Popover, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
 import cn from 'clsx'
+
+import { ChevronDownIcon } from '@heroicons/react/solid'
 
 import { filtersData, sortOptionsData } from '@config/filters'
 import { featuredCollections, products } from '@config/products'
@@ -14,6 +14,33 @@ import { Element, Container } from '@components/ui'
 import { ProductCard, ProductFeaturedCard } from '@components/product'
 
 const Products = () => {
+  const [sortMenuActive, setSortMenuActive] = useState(false)
+  const [filterMenuState, setFilterMenuState] = useState([
+    false,
+    false,
+    false,
+    false,
+  ])
+
+  const toggleFilter = (e: React.SyntheticEvent<EventTarget>, i: number) => {
+    e.preventDefault()
+
+    // Clone the array
+    const clone = filterMenuState.slice(0)
+
+    // Reset all sub-menus except for the one that clicked
+    const newState = clone.map((val, index) => {
+      if (index === i) {
+        return val
+      }
+      return false
+    })
+
+    newState[i] = !newState[i]
+
+    setFilterMenuState(newState)
+  }
+
   //Filters.
   const [sortOptions, setSortOptions] = useState(sortOptionsData)
   const [filters, setFilters] = useState(filtersData)
@@ -53,7 +80,7 @@ const Products = () => {
         </Container>
       </Element>
 
-      {/* Filters */}
+      {/* Sort options & filters */}
       <Element
         type='section'
         label='Filter'
@@ -61,49 +88,45 @@ const Products = () => {
       >
         <Container>
           <div className='flex items-center justify-between'>
-            <Menu as='div' className='relative z-10 inline-block text-left'>
+            <div className='relative z-10 inline-block text-left'>
               <div>
-                <Menu.Button className='inline-flex justify-center text-sm font-medium text-gray-700 group hover:text-gray-900'>
+                <button
+                  className='inline-flex justify-center text-sm font-medium text-gray-700 group hover:text-gray-900'
+                  onClick={() => setSortMenuActive(!sortMenuActive)}
+                >
                   Sort
                   <ChevronDownIcon
                     className='flex-shrink-0 w-5 h-5 ml-1 -mr-1 text-gray-400 group-hover:text-gray-500'
                     aria-hidden='true'
                   />
-                </Menu.Button>
+                </button>
               </div>
 
-              <Transition
-                as={Fragment}
-                enter='transition ease-out duration-100'
-                enterFrom='transform opacity-0 scale-95'
-                enterTo='transform opacity-100 scale-100'
-                leave='transition ease-in duration-75'
-                leaveFrom='transform opacity-100 scale-100'
-                leaveTo='transform opacity-0 scale-95'
+              <div
+                className={cn(
+                  'left-0 z-10 w-40 mt-2 origin-top-left bg-white rounded-md shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none',
+                  {
+                    absolute: sortMenuActive,
+                    hidden: !sortMenuActive,
+                  }
+                )}
               >
-                <Menu.Items className='absolute left-0 z-10 w-40 mt-2 origin-top-left bg-white rounded-md shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none'>
-                  <div className='py-1'>
-                    {sortOptions.map((option) => (
-                      <Menu.Item key={option.name}>
-                        {({ active }) => (
-                          <a
-                            href={option.href}
-                            className={cn(
-                              'block px-4 py-2 text-sm font-medium text-gray-900',
-                              {
-                                'bg-gray-100': active,
-                              }
-                            )}
-                          >
-                            {option.name}
-                          </a>
+                <div className='py-1'>
+                  {sortOptions.map((option) => (
+                    <div key={option.name}>
+                      <a
+                        href={option.href}
+                        className={cn(
+                          'block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100'
                         )}
-                      </Menu.Item>
-                    ))}
-                  </div>
-                </Menu.Items>
-              </Transition>
-            </Menu>
+                      >
+                        {option.name}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             <button
               type='button'
@@ -112,16 +135,17 @@ const Products = () => {
               Filters
             </button>
 
-            <Popover.Group className='hidden sm:flex sm:items-baseline sm:space-x-8'>
+            <div className='hidden sm:flex sm:items-baseline sm:space-x-8'>
               {filters.map((section, sectionIdx) => (
-                <Popover
-                  as='div'
+                <div
                   key={section.name}
-                  id='menu'
                   className='relative z-10 inline-block text-left'
                 >
                   <div>
-                    <Popover.Button className='inline-flex items-center justify-center text-sm font-medium text-gray-700 group hover:text-gray-900'>
+                    <button
+                      className='inline-flex items-center justify-center text-sm font-medium text-gray-700 group hover:text-gray-900'
+                      onClick={(e) => toggleFilter(e, sectionIdx)}
+                    >
                       <span>{section.name}</span>
                       {sectionIdx === 0 ? (
                         <span className='ml-1.5 rounded py-0.5 px-1.5 bg-gray-200 text-xs font-semibold text-gray-700 tabular-nums'>
@@ -132,44 +156,42 @@ const Products = () => {
                         className='flex-shrink-0 w-5 h-5 ml-1 -mr-1 text-gray-400 group-hover:text-gray-500'
                         aria-hidden='true'
                       />
-                    </Popover.Button>
+                    </button>
                   </div>
 
-                  <Transition
-                    as={Fragment}
-                    enter='transition ease-out duration-100'
-                    enterFrom='transform opacity-0 scale-95'
-                    enterTo='transform opacity-100 scale-100'
-                    leave='transition ease-in duration-75'
-                    leaveFrom='transform opacity-100 scale-100'
-                    leaveTo='transform opacity-0 scale-95'
+                  <div
+                    className={cn(
+                      'right-0 p-4 mt-2 origin-top-right bg-white rounded-md shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none',
+                      {
+                        absolute: filterMenuState[sectionIdx],
+                        hidden: !filterMenuState[sectionIdx],
+                      }
+                    )}
                   >
-                    <Popover.Panel className='absolute right-0 p-4 mt-2 origin-top-right bg-white rounded-md shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none'>
-                      <form className='space-y-4'>
-                        {section.options.map((option, optionIdx) => (
-                          <div key={option.value} className='flex items-center'>
-                            <input
-                              id={`filter-${section.id}-${optionIdx}`}
-                              name={section.id}
-                              defaultValue={option.value}
-                              defaultChecked={false}
-                              type='checkbox'
-                              className='w-4 h-4 text-gray-600 border-gray-300 rounded focus:ring-gray-500'
-                            />
-                            <label
-                              htmlFor={`filter-${section.id}-${optionIdx}`}
-                              className='pr-6 ml-3 text-sm font-medium text-gray-900 whitespace-nowrap'
-                            >
-                              {option.label}
-                            </label>
-                          </div>
-                        ))}
-                      </form>
-                    </Popover.Panel>
-                  </Transition>
-                </Popover>
+                    <form className='space-y-4'>
+                      {section.options.map((option, optionIdx) => (
+                        <div key={option.value} className='flex items-center'>
+                          <input
+                            id={`filter-${section.id}-${optionIdx}`}
+                            name={section.id}
+                            defaultValue={option.value}
+                            defaultChecked={false}
+                            type='checkbox'
+                            className='w-4 h-4 text-gray-600 border-gray-300 rounded focus:ring-gray-500'
+                          />
+                          <label
+                            htmlFor={`filter-${section.id}-${optionIdx}`}
+                            className='pr-6 ml-3 text-sm font-medium text-gray-900 whitespace-nowrap'
+                          >
+                            {option.label}
+                          </label>
+                        </div>
+                      ))}
+                    </form>
+                  </div>
+                </div>
               ))}
-            </Popover.Group>
+            </div>
           </div>
         </Container>
       </Element>

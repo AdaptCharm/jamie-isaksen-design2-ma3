@@ -5,6 +5,7 @@ export type FilterTypes = {
     value: string
     label: string
   }[]
+  open: boolean
 }
 
 export const filtersData: FilterTypes[] = [
@@ -19,6 +20,7 @@ export const filtersData: FilterTypes[] = [
       { value: 'amet', label: 'Amet' },
       { value: 'consectetur', label: 'Consectetur' },
     ],
+    open: false,
   },
   {
     id: 'brand',
@@ -29,6 +31,7 @@ export const filtersData: FilterTypes[] = [
       { value: 'dolor', label: 'Dolor' },
       { value: 'sit', label: 'Sit' },
     ],
+    open: false,
   },
   {
     id: 'color',
@@ -37,11 +40,13 @@ export const filtersData: FilterTypes[] = [
       { value: 'lorem', label: 'Lorem' },
       { value: 'ipsum', label: 'Ipsum' },
     ],
+    open: false,
   },
   {
     id: 'sizes',
     name: 'Sizes',
     options: [{ value: 'lorem', label: 'Lorem' }],
+    open: false,
   },
 ]
 
