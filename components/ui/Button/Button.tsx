@@ -1,5 +1,5 @@
 import { FC, ButtonHTMLAttributes, JSXElementConstructor } from 'react'
-import cn from 'classnames'
+import cn from 'clsx'
 
 export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string

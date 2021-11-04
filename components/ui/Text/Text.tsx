@@ -5,8 +5,7 @@ import {
   ComponentType,
   JSXElementConstructor,
 } from 'react'
-import cn from 'classnames'
-import s from './Text.module.css'
+import cn from 'clsx'
 
 interface Props {
   className?: string

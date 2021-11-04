@@ -1,5 +1,5 @@
-import { FC, ComponentType, HTMLAttributes } from 'react'
-import cn from 'classnames'
+import { FC, ComponentType } from 'react'
+import cn from 'clsx'
 import s from './Element.module.css'
 
 interface Props {

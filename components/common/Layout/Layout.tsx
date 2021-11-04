@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { useRouter } from 'next/router'
-import cn from 'classnames'
+import cn from 'clsx'
 import { Navbar, Footer } from '@components/common'
 
 const Layout: FC = ({ children }) => {

@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes } from 'react'
-import cn from 'classnames'
+import cn from 'clsx'
 import s from './Spacer.module.css'
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {

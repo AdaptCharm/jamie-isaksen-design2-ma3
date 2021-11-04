@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import cn from 'classnames'
+import cn from 'clsx'
 import s from './Container.module.css'
 
 interface Props {

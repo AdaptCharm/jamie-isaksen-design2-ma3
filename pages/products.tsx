@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react'
 import Image from 'next/image'
 import { Menu, Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import cn from 'classnames'
+import cn from 'clsx'
 
 import { filtersData, sortOptionsData } from '@config/filters'
 import { featuredCollections, products } from '@config/products'

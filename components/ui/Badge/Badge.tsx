@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react'
-import cn from 'classnames'
+import cn from 'clsx'
 import s from './Badge.module.css'
 
 interface Props {
