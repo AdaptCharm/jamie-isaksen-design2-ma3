@@ -24,7 +24,7 @@ export const products: ProductTypes[] = [
     price: '$25',
     href: '#',
     image: {
-      src: '/products/decorations/bali-stone-decorations.png',
+      src: '/products/decorations/bali-stone-decorations.jpg',
       alt: 'Bali stone decorations',
     },
   },
@@ -89,7 +89,7 @@ export const products: ProductTypes[] = [
     price: '$100',
     href: '#',
     image: {
-      src: '/products/vases/purple-foliage-with-ceramic-vase.png',
+      src: '/products/vases/purple-foliage-with-ceramic-vase.jpg',
       alt: 'Purple foliage with ceramic vase',
     },
   },
@@ -102,7 +102,7 @@ export const products: ProductTypes[] = [
     price: '$50',
     href: '#',
     image: {
-      src: '/products/vases/clear-glass-vase-with-a-wooden-cup-of-tea.png',
+      src: '/products/vases/clear-glass-vase-with-a-wooden-cup-of-tea.jpg',
       alt: 'Clear glass vase with a wooden cup of tea',
     },
   },
@@ -115,7 +115,7 @@ export const products: ProductTypes[] = [
     price: '$25',
     href: '#',
     image: {
-      src: '/products/vases/glass-vase-with-green-leafs.png',
+      src: '/products/vases/glass-vase-with-green-leafs.jpg',
       alt: 'Glass vase with green leafs',
     },
   },
@@ -128,7 +128,7 @@ export const products: ProductTypes[] = [
     price: '$25',
     href: '#',
     image: {
-      src: '/products/decorations/black-crow.png',
+      src: '/products/decorations/black-crow.jpg',
       alt: 'Black crow',
     },
   },
@@ -141,7 +141,7 @@ export const products: ProductTypes[] = [
     price: '$50',
     href: '#',
     image: {
-      src: '/products/decorations/exotic-stones.png',
+      src: '/products/decorations/exotic-stones.jpg',
       alt: 'Exotic stones',
     },
   },
@@ -154,7 +154,7 @@ export const products: ProductTypes[] = [
     price: '$75',
     href: '#',
     image: {
-      src: '/products/decorations/mix-of-decorations.png',
+      src: '/products/decorations/mix-of-decorations.jpg',
       alt: 'Mix of decorations',
     },
   },
@@ -179,7 +179,7 @@ export const featuredCollections: FeaturedCollectionTypes[] = [
       'Velit incididunt commodo ut ut aute nostrud cillum veniam ipsum amet',
     href: '#',
     image: {
-      src: '/collections/rugs-collection.png',
+      src: '/collections/rugs-collection.jpg',
       alt: 'Rugs collection',
     },
   },
@@ -190,7 +190,7 @@ export const featuredCollections: FeaturedCollectionTypes[] = [
       'Nulla veniam deserunt sint culpa occaecat ullamco ullamco pariatur incididunt veniam',
     href: '#',
     image: {
-      src: '/collections/mirrors-collection.png',
+      src: '/collections/mirrors-collection.jpg',
       alt: 'Mirrors collection',
     },
   },

@@ -48,8 +48,8 @@ export default function Home() {
           <Image
             className='object-cover object-center w-full h-full'
             placeholder='blur'
-            blurDataURL='/gradients/gradient-1.png'
-            src='/gradients/gradient-1.png'
+            blurDataURL='/gradients/gradient-1.jpg'
+            src='/gradients/gradient-1.jpg'
             alt='Gradient 1.'
             layout='fill'
           />
@@ -218,8 +218,8 @@ export default function Home() {
               <Image
                 className='object-cover object-center w-full h-full'
                 placeholder='blur'
-                blurDataURL='/gradients/gradient-2.png'
-                src='/gradients/gradient-2.png'
+                blurDataURL='/gradients/gradient-2.jpg'
+                src='/gradients/gradient-2.jpg'
                 alt='Gradient 2.'
                 layout='fill'
               />
