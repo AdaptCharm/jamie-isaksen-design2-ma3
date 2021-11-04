@@ -1,0 +1,12 @@
+{
+  "title": "Home",
+  "titleTemplate": "%s | Design 2 MA3",
+  "defaultTitle": "Design 2 MA3",
+  "description": "The Design 2 Module Assignment 3.",
+  "openGraph": {
+    "type": "website",
+    "locale": "en",
+    "url": "https://jamie-isaksen-design2-ma3.vercel.app",
+    "site_name": "Design 2 MA3"
+  }
+}

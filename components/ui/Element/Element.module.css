@@ -1,0 +1,7 @@
+.root {
+  @apply relative;
+}
+
+.clean {
+  @apply py-8 xl:py-12;
+}
