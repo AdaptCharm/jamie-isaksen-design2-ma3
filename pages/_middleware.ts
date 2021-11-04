@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
   const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval';
+    script-src 'self' 'unsafe-eval' vitals.vercel-insights.com;
     child-src 'none';
     style-src 'self' 'unsafe-inline' *.googleapis.com;
     img-src * blob: data:;
