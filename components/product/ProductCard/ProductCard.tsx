@@ -4,9 +4,6 @@ import Image from 'next/image'
 
 import { HeartIcon } from '@heroicons/react/outline'
 
-import { motion } from 'framer-motion'
-import { variants } from '@config/motion'
-
 import { ProductTypes } from '@config/products'
 
 interface Props {
@@ -16,18 +13,8 @@ interface Props {
 
 const ProductCard: FC<Props> = ({ className, product }) => {
   return (
-    <motion.div
-      variants={variants.fadeInUp}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className='relative group'
-    >
-      <motion.div
-        initial={{ x: 60, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        className='relative w-full h-56 overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80'
-      >
+    <div className='relative group'>
+      <div className='relative w-full h-56 overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80'>
         <Image
           className='object-cover object-center w-full h-full'
           placeholder='blur'
@@ -36,7 +23,7 @@ const ProductCard: FC<Props> = ({ className, product }) => {
           alt={product.image.alt}
           layout='fill'
         />
-      </motion.div>
+      </div>
       <h3 className='mt-4 text-sm text-gray-700'>
         <Link href={product.href} scroll={false}>
           <a>
@@ -56,7 +43,7 @@ const ProductCard: FC<Props> = ({ className, product }) => {
           <HeartIcon className='w-6 h-6 text-gray-600' />
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

@@ -1,11 +1,8 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 
-import { variants } from '@config/motion'
 import { FeaturedCollectionTypes } from '@config/products'
-
 interface Props {
   className?: string
   product: FeaturedCollectionTypes
