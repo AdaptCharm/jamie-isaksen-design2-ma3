@@ -1,18 +1,9 @@
-export type CategoryTypes = 'decorations' | 'vases' | 'custom'
-
-export type ProductTypes = {
-  id: number
-  category: CategoryTypes
-  name: string
-  description: string
-  color: string
-  price: string
-  href: string
-  image: {
-    src: string
-    alt: string
-  }
-}
+import {
+  ProductTypes,
+  FeaturedCollectionTypes,
+  SortOptionTypes,
+  FilterTypes,
+} from './types'
 
 export const products: ProductTypes[] = [
   {
@@ -160,17 +151,6 @@ export const products: ProductTypes[] = [
   },
 ]
 
-export type FeaturedCollectionTypes = {
-  id: number
-  name: string
-  description: string
-  href: string
-  image: {
-    src: string
-    alt: string
-  }
-}
-
 export const featuredCollections: FeaturedCollectionTypes[] = [
   {
     id: 1,
@@ -193,5 +173,55 @@ export const featuredCollections: FeaturedCollectionTypes[] = [
       src: '/collections/mirrors-collection.jpg',
       alt: 'Mirrors collection',
     },
+  },
+]
+
+export const sortOptionsData: SortOptionTypes[] = [
+  { name: 'Lorem', href: '#' },
+  { name: 'Ipsum', href: '#' },
+  { name: 'Dolor', href: '#' },
+  { name: 'Sit', href: '#' },
+  { name: 'Amet', href: '#' },
+]
+
+export const filtersData: FilterTypes[] = [
+  {
+    id: 'category',
+    name: 'Category',
+    options: [
+      { value: 'lorem', label: 'Lorem' },
+      { value: 'ipsum', label: 'Ipsum' },
+      { value: 'dolor', label: 'Dolor' },
+      { value: 'sit', label: 'Sit' },
+      { value: 'amet', label: 'Amet' },
+      { value: 'consectetur', label: 'Consectetur' },
+    ],
+    open: false,
+  },
+  {
+    id: 'brand',
+    name: 'Brand',
+    options: [
+      { value: 'lorem', label: 'Lorem' },
+      { value: 'ipsum', label: 'Ipsum' },
+      { value: 'dolor', label: 'Dolor' },
+      { value: 'sit', label: 'Sit' },
+    ],
+    open: false,
+  },
+  {
+    id: 'color',
+    name: 'Color',
+    options: [
+      { value: 'lorem', label: 'Lorem' },
+      { value: 'ipsum', label: 'Ipsum' },
+    ],
+    open: false,
+  },
+  {
+    id: 'sizes',
+    name: 'Sizes',
+    options: [{ value: 'lorem', label: 'Lorem' }],
+    open: false,
   },
 ]
