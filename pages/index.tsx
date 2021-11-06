@@ -1,15 +1,11 @@
-import { Layout } from '@components/common'
 import Link from 'next/link'
 import Image from 'next/image'
-
-// Icons
 import {
   ShieldCheckIcon,
   TruckIcon,
   SparklesIcon,
 } from '@heroicons/react/outline'
 
-// Data
 import { products } from '@lib/data/collections'
 
 import { filterByValue } from '@lib/collections'

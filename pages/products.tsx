@@ -3,7 +3,6 @@ import Image from 'next/image'
 import cn from 'clsx'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
-// Data
 import {
   filtersData,
   sortOptionsData,
@@ -11,11 +10,8 @@ import {
   products,
 } from '@lib/data/collections'
 
-// Functions
 import { filterByValue } from '@lib/collections'
 
-// Components
-import { Layout } from '@components/common'
 import { Element, Container } from '@components/ui'
 import { ProductCard, ProductFeaturedCard } from '@components/product'
 import Page from '@components/Page'
