@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes } from 'react'
+import type { FC, InputHTMLAttributes } from 'react'
 import cn from 'clsx'
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -21,10 +21,10 @@ const Input: FC<InputProps> = ({ className, onChange, ...rest }) => {
         className
       )}
       onChange={handleOnChange}
-      autoComplete='off'
-      autoCorrect='off'
-      autoCapitalize='off'
-      spellCheck='false'
+      autoComplete="off"
+      autoCorrect="off"
+      autoCapitalize="off"
+      spellCheck="false"
       {...rest}
     />
   )

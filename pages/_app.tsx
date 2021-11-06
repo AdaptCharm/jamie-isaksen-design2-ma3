@@ -1,6 +1,6 @@
 import '@assets/main.css'
 
-import { FC, useEffect } from 'react'
+import { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {

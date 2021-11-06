@@ -1,4 +1,4 @@
-import { FC, ComponentType } from 'react'
+import type { FC, ComponentType } from 'react'
 import cn from 'clsx'
 import s from './Element.module.css'
 
@@ -38,7 +38,7 @@ const Element: FC<Props> = ({
       )}
     >
       {type === 'section' && (
-        <h2 id={ariaLabel} className='sr-only'>
+        <h2 id={ariaLabel} className="sr-only">
           {label}
         </h2>
       )}
