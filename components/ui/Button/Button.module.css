@@ -1,0 +1,96 @@
+.reset {
+  outline: none;
+  margin: 0;
+  font-family: inherit;
+  vertical-align: middle;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.base {
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: none;
+}
+
+.root {
+  @apply flex items-center justify-center font-normal py-0 px-3 rounded-md max-w-full;
+  transition-property: border-color, background, color, transform, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+/* Variants */
+.primary {
+  @apply bg-black text-white border border-black;
+  box-shadow: none;
+}
+
+.primary:hover {
+  box-shadow: none;
+  @apply bg-white text-black border-black;
+}
+
+.secondary {
+  @apply border-gray-200 border bg-white text-gray-500;
+  box-shadow: none;
+}
+
+.secondary:hover {
+  box-shadow: none;
+  @apply border-gray-900 bg-white text-gray-900;
+}
+
+/* Sizes */
+.small {
+  @apply text-sm h-8;
+}
+
+.small.shape {
+  @apply w-8;
+}
+
+.small.shape svg {
+  @apply w-4 h-4;
+}
+
+.medium {
+  @apply text-sm h-10;
+}
+
+.medium.shape {
+  @apply w-10;
+}
+
+.medium.shape svg {
+  @apply w-5 h-5;
+}
+
+.large {
+  @apply text-base h-12;
+}
+
+.large.shape {
+  @apply w-12;
+}
+
+.large.shape svg {
+  @apply w-6 h-6;
+}
+
+/* Shapes */
+.shape {
+  @apply p-0;
+}
+
+.square {
+  @apply rounded-md;
+}
+
+.circle {
+  @apply rounded-full;
+}

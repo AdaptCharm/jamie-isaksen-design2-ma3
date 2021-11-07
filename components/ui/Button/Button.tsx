@@ -1,47 +1,84 @@
-import type { FC, ButtonHTMLAttributes, JSXElementConstructor } from 'react'
+import type {
+  FC,
+  ButtonHTMLAttributes,
+  JSXElementConstructor,
+  AnchorHTMLAttributes,
+} from 'react'
 import cn from 'clsx'
+import s from './Button.module.css'
 
-export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+export type ButtonComponentType = 'button' | 'a' | JSXElementConstructor<any>
+
+export interface ButtonProps<C extends ButtonComponentType = 'button'> {
+  href?: string
   className?: string
-  size?: Size
-  color?: Color
-  Component?: string | JSXElementConstructor<any>
-  children?: string | React.ReactNode
+  variant?: 'primary' | 'secondary'
+  size?: 'small' | 'medium' | 'large'
+  shape?: 'square' | 'circle'
+  active?: boolean
+  type?: 'submit' | 'reset' | 'button'
+  Component?: C
+  width?: string | number
+  loading?: boolean
+  disabled?: boolean
 }
 
-type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+export type ButtonHTMLType<C extends ButtonComponentType = 'button'> =
+  C extends 'a'
+    ? AnchorHTMLAttributes<HTMLAnchorElement>
+    : ButtonHTMLAttributes<HTMLButtonElement>
 
-type Color = 'black' | 'white'
+type ButtonFC<C extends ButtonComponentType = 'button'> = FC<
+  ButtonHTMLType<C> & ButtonProps<C>
+>
 
-const Button: FC<Props> = ({
-  className,
-  size = 'sm',
-  color = 'black',
-  Component = 'button',
+type ButtonType = <C extends ButtonComponentType = 'button'>(
+  ...args: Parameters<ButtonFC<C>>
+) => ReturnType<ButtonFC<C>>
+
+const Button: ButtonFC = ({
+  width,
+  active,
   children,
+  variant = 'primary',
+  Component = 'button',
+  disabled = false,
+  loading = false,
+  style = {},
+  size = 'medium',
+  shape,
+  className,
+  ...rest
 }) => {
+  const rootClassName = cn(
+    s.reset,
+    s.base,
+    s.root,
+    [s[`${variant}`]],
+    [s[`${size}`]],
+    [s[`${shape}`]],
+    {
+      [s.shape]: shape,
+      [s.disabled]: disabled,
+    },
+    className
+  )
+
   return (
     <Component
-      className={cn(
-        'inline-flex items-center border rounded-md transition ease-default focus:outline-none focus:ring-transparent',
-        {
-          'bg-black dark:bg-white text-white dark:text-black border-black dark:border-white hover:bg-transparent dark:hover:bg-transparent hover:text-black dark:hover:text-white':
-            color === 'black',
-          'text-gray-500 bg-white border-bg-gray-200 hover:border-black hover:text-black':
-            color === 'white',
-          'px-2.5 py-1.5 text-xs': size == 'xs',
-          'px-3 py-2 text-sm': size == 'sm',
-          'px-4 py-2 text-sm': size == 'md',
-          'px-4 py-2': size == 'lg',
-          'px-6 py-3': size == 'xs',
-        },
-        className
-      )}
-      type="submit"
+      aria-pressed={active}
+      data-variant={variant}
+      className={rootClassName}
+      disabled={disabled}
+      style={{
+        width,
+        ...style,
+      }}
+      {...rest}
     >
       {children}
     </Component>
   )
 }
 
-export default Button
+export default Button as ButtonType
