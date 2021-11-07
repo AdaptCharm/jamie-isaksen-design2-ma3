@@ -2,9 +2,10 @@ import type { FC, ComponentType } from 'react'
 import cn from 'clsx'
 import s from './Element.module.css'
 
+//TODO: Fix aria-label
 interface Props {
   className?: string
-  label?: string
+  // label?: string
   type?: Type
   variant?: Variant
   children?: any
@@ -16,17 +17,17 @@ type Variant = 'white' | 'black' | 'gray'
 
 const Element: FC<Props> = ({
   className,
-  label,
+  // label,
   type = 'div',
   variant = 'white',
   children,
 }) => {
   const Component: ComponentType<any> | string = type as any
-  const ariaLabel = label && `${label.toLowerCase().replace(' ', '-')}-heading`
+  // const ariaLabel = label && `${label.toLowerCase().replace(' ', '-')}-heading`
 
   return (
     <Component
-      aria-labelledby={ariaLabel}
+      // aria-labelledby={ariaLabel}
       className={cn(
         s.root,
         {
@@ -37,11 +38,11 @@ const Element: FC<Props> = ({
         className
       )}
     >
-      {type === 'section' && (
+      {/* {type === 'section' && (
         <h2 id={ariaLabel} className="sr-only">
           {label}
         </h2>
-      )}
+      )} */}
       {children}
     </Component>
   )
