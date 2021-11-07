@@ -7,14 +7,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'accents-1': '#fafafa',
-        'accents-2': '#eaeaea',
-        'accents-3': '#999',
-        'accents-4': '#888',
-        'accents-5': '#666',
-        'accents-6': '#444',
-        'accents-7': '#333',
-        'accents-8': '#111',
+        gray: {
+          0: '#fff',
+          100: '#fafafa',
+          200: '#eaeaea',
+          300: '#999999',
+          400: '#888888',
+          500: '#666666',
+          600: '#444444',
+          700: '#333333',
+          800: '#111111',
+          900: '#000',
+        },
         teal: colors.teal,
         cyan: colors.cyan,
       },
