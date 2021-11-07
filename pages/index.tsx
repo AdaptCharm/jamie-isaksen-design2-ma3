@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import {
   ShieldCheckIcon,
@@ -12,7 +11,7 @@ import { filterByValue } from '@lib/collections'
 
 import { ProductCard } from '@components/product'
 
-import { Element } from '@components/ui'
+import { Container, Element, Text, Button, Link } from '@components/ui'
 
 import Page from '@components/Page'
 
@@ -45,112 +44,78 @@ export default function Home() {
   return (
     <Page>
       {/* Hero section */}
-      <Element type="section" label="Hero">
+      <Element type="section">
         {/* Fluid image */}
-        <div
-          className="relative flex-shrink-0 overflow-hidden"
-          aria-hidden="true"
-        >
+        <div className="relative flex-shrink-0" aria-hidden="true">
           <Image
-            className="object-cover object-center w-full h-full"
+            objectFit="cover"
+            objectPosition="center"
             placeholder="blur"
             blurDataURL="/gradients/gradient-1.jpg"
             src="/gradients/gradient-1.jpg"
             alt="Gradient 1."
             layout="fill"
           />
-        </div>
-
-        {/* Content */}
-        <div className="relative flex flex-col items-center max-w-3xl px-6 py-32 mx-auto text-center sm:py-64 lg:px-0">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl">
-            <span className="block text-black">A better way to</span>
-            <span className="block text-white drop-shadow">
-              shop home decor
-            </span>
-          </h1>
-          <p className="mt-6 text-xl text-black">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <Link href="/products">
-            <a className="inline-block px-8 py-3 mt-8 text-base font-semibold text-black bg-white border border-transparent rounded-md bg-opacity-30 hover:bg-opacity-50">
-              View Products
-            </a>
-          </Link>
-        </div>
-      </Element>
-
-      {/* Decorations section */}
-      <section aria-labelledby="trending-heading">
-        <div className="px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="md:flex md:items-center md:justify-between">
-            <h2
-              id="favorites-heading"
-              className="text-2xl font-extrabold tracking-tight text-gray-900"
-            >
-              Decorations
-            </h2>
-
-            <Link href="/" scroll={false}>
-              <a className="hidden space-x-1 text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-cyan-400 hover:from-teal-200 hover:to-cyan-300 md:inline-flex">
-                <span>Shop the collection</span>
-                <span aria-hidden="true">&rarr;</span>
+          {/* Content */}
+          <div className="relative flex flex-col items-center max-w-3xl px-6 py-32 mx-auto text-center sm:py-64 lg:px-0">
+            <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl">
+              <span className="block text-black">A better way to</span>
+              <span className="block text-white drop-shadow">
+                shop home decor
+              </span>
+            </h1>
+            <p className="mt-6 text-xl text-black">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <Link href="/products">
+              <a className="inline-block px-8 py-3 mt-8 text-base font-semibold text-black bg-white border border-transparent rounded-md bg-opacity-30 hover:bg-opacity-50">
+                View Products
               </a>
             </Link>
           </div>
+        </div>
+      </Element>
 
+      {/* New arrivals */}
+      <Element type="section" className="py-24">
+        <Container>
+          <div className="md:flex md:items-center md:justify-between">
+            <Text variant="h2">New Arrivals</Text>
+            <div className="hidden md:block">
+              <Button>Shop the collection &rarr;</Button>
+            </div>
+          </div>
           <div className="grid grid-cols-2 mt-6 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
             {decorations.map((product) => (
               <ProductCard product={product} key={product.id} />
             ))}
           </div>
-
           <div className="mt-8 text-sm md:hidden">
-            <Link href="/" scroll={false}>
-              <a className="inline-flex space-x-1 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-cyan-400 hover:from-teal-200 hover:to-cyan-300">
-                <span>Shop the collection</span>
-                <span aria-hidden="true"> &rarr;</span>
-              </a>
-            </Link>
+            <Button>Shop the collection &rarr;</Button>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Element>
 
-      {/* Vases section */}
-      <section aria-labelledby="trending-heading">
-        <div className="px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      {/* Featured products */}
+      <Element type="section" className="py-24">
+        <Container>
           <div className="md:flex md:items-center md:justify-between">
-            <h2
-              id="favorites-heading"
-              className="text-2xl font-extrabold tracking-tight text-gray-900"
-            >
-              Vases
-            </h2>
-            <Link href="/" scroll={false}>
-              <a className="hidden space-x-1 text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-cyan-400 hover:from-teal-200 hover:to-cyan-300 md:inline-flex">
-                <span>Shop the collection</span>
-                <span aria-hidden="true"> &rarr;</span>
-              </a>
-            </Link>
+            <Text variant="h2">Featured Products</Text>
+            <div className="hidden md:block">
+              <Button>Shop the collection &rarr;</Button>
+            </div>
           </div>
-
           <div className="grid grid-cols-2 mt-6 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
             {vases.map((product) => (
               <ProductCard product={product} key={product.id} />
             ))}
           </div>
-
           <div className="mt-8 text-sm md:hidden">
-            <Link href="/" scroll={false}>
-              <a className="inline-flex space-x-1 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-cyan-400 hover:from-teal-200 hover:to-cyan-300">
-                <span>Shop the collection</span>
-                <span aria-hidden="true">&rarr;</span>
-              </a>
-            </Link>
+            <Button>Shop the collection &rarr;</Button>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Element>
 
       {/* Featured section */}
       <section aria-labelledby="comfort-heading">
