@@ -82,11 +82,7 @@ export default function Products() {
       </Element>
 
       {/* Sort options & filters */}
-      <Element
-        type="section"
-        label="Filter"
-        className="pt-6 border-t border-gray-200"
-      >
+      <Element type="section" className="pt-6 border-t border-gray-200">
         <Container>
           <div className="flex items-center justify-between">
             <div className="relative z-10 inline-block text-left">
@@ -198,7 +194,7 @@ export default function Products() {
       </Element>
 
       {/* Product grid filtered by decorations category */}
-      <Element type="section" label="Products" className="mt-8">
+      <Element type="section" className="mt-8">
         <Container>
           <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 md:gap-x-8">
             {decorations.map((product) => (
@@ -209,7 +205,7 @@ export default function Products() {
       </Element>
 
       {/* Featured collection card filtered by first result */}
-      <Element type="section" label="Featured collection" className="mt-16">
+      <Element type="section" className="mt-16">
         <Container>
           {rugs.map((collection) => (
             <ProductFeaturedCard product={collection} key={collection.id} />
@@ -218,7 +214,7 @@ export default function Products() {
       </Element>
 
       {/* Product grid filtered by vases category */}
-      <Element type="section" label="More products" className="mt-16">
+      <Element type="section" className="mt-16">
         <Container>
           <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-4 md:gap-x-8">
             {vases.map((product) => (
@@ -229,11 +225,7 @@ export default function Products() {
       </Element>
 
       {/* Featured collection card filtered by mirrors collection */}
-      <Element
-        type="section"
-        label="Popular collection"
-        className="pb-24 mt-16"
-      >
+      <Element type="section" className="pb-24 mt-16">
         <Container>
           {mirrors.map((collection) => (
             <ProductFeaturedCard product={collection} key={collection.id} />
