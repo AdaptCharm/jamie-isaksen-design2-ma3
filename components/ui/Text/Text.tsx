@@ -14,7 +14,7 @@ interface Props {
   children?: ReactNode | any
 }
 
-type Variant = 'heading' | 'subHeading' | 'paragraph'
+type Variant = 'heading' | 'subHeading' | 'paragraph' | 'h2'
 
 type Color = 'black' | 'gray'
 
@@ -29,6 +29,7 @@ const Text: FC<Props> = ({
   } = {
     heading: 'h1',
     subHeading: 'h2',
+    h2: 'h2',
     paragraph: 'p',
   }
 
@@ -47,6 +48,8 @@ const Text: FC<Props> = ({
           'text-2xl md:text-4xl tracking-tight leading-tight':
             variant === 'subHeading',
           'text-sm': variant === 'paragraph',
+          'text-2xl font-extrabold tracking-tight text-gray-900':
+            variant === 'h2',
           'text-black dark:text-white': color === 'black',
           'text-accents-5 dark:text-accents-4': color === 'gray',
         },
