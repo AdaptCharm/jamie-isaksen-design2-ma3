@@ -155,8 +155,7 @@ export const featuredCollections: FeaturedCollectionTypes[] = [
   {
     id: 1,
     name: 'Rugs Collection',
-    description:
-      'Velit incididunt commodo ut ut aute nostrud cillum veniam ipsum amet',
+    description: 'A beautiful collection of exclusive rugs',
     href: '#',
     image: {
       src: '/collections/rugs-collection.jpg',
@@ -166,8 +165,7 @@ export const featuredCollections: FeaturedCollectionTypes[] = [
   {
     id: 2,
     name: 'Mirrors Collection',
-    description:
-      'Nulla veniam deserunt sint culpa occaecat ullamco ullamco pariatur incididunt veniam',
+    description: 'A beautiful collection of modern mirrors',
     href: '#',
     image: {
       src: '/collections/mirrors-collection.jpg',
@@ -177,11 +175,11 @@ export const featuredCollections: FeaturedCollectionTypes[] = [
 ]
 
 export const sortOptionsData: SortOptionTypes[] = [
-  { name: 'Lorem', href: '#' },
-  { name: 'Ipsum', href: '#' },
-  { name: 'Dolor', href: '#' },
-  { name: 'Sit', href: '#' },
-  { name: 'Amet', href: '#' },
+  { name: 'Most Popular', href: '#' },
+  { name: 'Best Rating', href: '#' },
+  { name: 'Newest', href: '#' },
+  { name: 'Price: Low to High', href: '#' },
+  { name: 'Price: High to Low', href: '#' },
 ]
 
 export const filtersData: FilterTypes[] = [
@@ -189,12 +187,12 @@ export const filtersData: FilterTypes[] = [
     id: 'category',
     name: 'Category',
     options: [
-      { value: 'lorem', label: 'Lorem' },
-      { value: 'ipsum', label: 'Ipsum' },
-      { value: 'dolor', label: 'Dolor' },
-      { value: 'sit', label: 'Sit' },
-      { value: 'amet', label: 'Amet' },
-      { value: 'consectetur', label: 'Consectetur' },
+      { value: 'decorations', label: 'Decorations' },
+      { value: 'vases', label: 'Vases' },
+      { value: 'pillows', label: 'Pillows' },
+      { value: 'rugs', label: 'Rugs' },
+      { value: 'mirrors', label: 'Mirrors' },
+      { value: 'candles', label: 'Candles' },
     ],
     open: false,
   },
@@ -202,10 +200,9 @@ export const filtersData: FilterTypes[] = [
     id: 'brand',
     name: 'Brand',
     options: [
-      { value: 'lorem', label: 'Lorem' },
-      { value: 'ipsum', label: 'Ipsum' },
-      { value: 'dolor', label: 'Dolor' },
-      { value: 'sit', label: 'Sit' },
+      { value: 'decor-company', label: 'Decor Company' },
+      { value: 'interior-ltd', label: 'Interior Ltd.' },
+      { value: 'decorating-inc', label: 'Decorating Inc.' },
     ],
     open: false,
   },
@@ -213,15 +210,26 @@ export const filtersData: FilterTypes[] = [
     id: 'color',
     name: 'Color',
     options: [
-      { value: 'lorem', label: 'Lorem' },
-      { value: 'ipsum', label: 'Ipsum' },
+      { value: 'natural', label: 'Natural' },
+      { value: 'black', label: 'Black' },
+      { value: 'white', label: 'White' },
+      { value: 'grey', label: 'Grey' },
+      { value: 'brown', label: 'Brown' },
+      { value: 'green', label: 'Green' },
     ],
     open: false,
   },
   {
     id: 'sizes',
     name: 'Sizes',
-    options: [{ value: 'lorem', label: 'Lorem' }],
+    options: [
+      { value: 'xs', label: 'XS' },
+      { value: 's', label: 'S' },
+      { value: 'm', label: 'M' },
+      { value: 'l', label: 'L' },
+      { value: 'xl', label: 'XL' },
+      { value: '2xl', label: '2XL' },
+    ],
     open: false,
   },
 ]

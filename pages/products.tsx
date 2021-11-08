@@ -76,7 +76,7 @@ export default function Products() {
             Products
           </h1>
           <p className="mt-4 text-base text-black">
-            Commodo commodo esse ipsum irure labore velit laborum adipisicing.
+            Discover home decorations with a sustainable focus.
           </p>
         </Container>
       </Element>
