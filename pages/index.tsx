@@ -19,20 +19,19 @@ const incentives = [
   {
     name: 'Free shipping',
     icon: TruckIcon,
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+    description: 'We cover the costs of shipping throughout the country.',
   },
   {
     name: '10-year warranty',
     icon: ShieldCheckIcon,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+      'We offer a 10-year warranty so that you as a customer are satisfied.',
   },
   {
     name: '24/7 customer support',
     icon: SparklesIcon,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+      'We provide a 24-hour customer service to answer any inquiries.',
   },
 ]
 
@@ -46,18 +45,48 @@ export default function Home() {
       {/* Hero section */}
       <Element type="section">
         {/* Fluid image */}
-        <div className="relative flex-shrink-0" aria-hidden="true">
-          <Image
-            objectFit="cover"
-            objectPosition="center"
-            placeholder="blur"
-            blurDataURL="/gradients/gradient-1.jpg"
-            src="/gradients/gradient-1.jpg"
-            alt="Gradient 1."
-            layout="fill"
-          />
+        <div className="relative" aria-hidden="true">
+          <div className="lg:hidden">
+            <Image
+              width="750"
+              height="750"
+              objectFit="cover"
+              placeholder="blur"
+              blurDataURL="/hero/hero-sm.jpeg"
+              src="/hero/hero-sm.jpeg"
+              alt="Hero image"
+              layout="responsive"
+            />
+          </div>
+
+          <div className="hidden lg:block">
+            <Image
+              width="1920"
+              height="692"
+              objectFit="cover"
+              placeholder="blur"
+              blurDataURL="/hero/hero-md.jpeg"
+              src="/hero/hero-md.jpeg"
+              alt="Hero image"
+              layout="responsive"
+            />
+          </div>
+          <div className="absolute inset-0 bg-black bg-opacity-50" />
+          <Container className="absolute inset-0 flex flex-col items-center justify-center text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl">
+              <span className="block text-white">Christmas is coming</span>
+            </h1>
+            <p className="max-w-3xl mt-6 text-xl text-white">
+              Free shipping on all home decorations.
+            </p>
+            <Link href="/products">
+              <a className="inline-block px-8 py-3 mt-8 text-base font-semibold text-black bg-white border border-transparent rounded-md bg-opacity-30 hover:bg-opacity-50">
+                View Products
+              </a>
+            </Link>
+          </Container>
           {/* Content */}
-          <div className="relative flex flex-col items-center max-w-3xl px-6 py-32 mx-auto text-center sm:py-64 lg:px-0">
+          <div className="absolute flex flex-col items-center max-w-3xl px-6 py-32 mx-auto text-center sm:py-64 lg:px-0">
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl">
               <span className="block text-black">A better way to</span>
               <span className="block text-white drop-shadow">
@@ -129,10 +158,10 @@ export default function Home() {
                 100% Customer Satisfaction
               </h2>
               <p className="mt-3 text-xl text-black">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                We strive to make you as a customer happy. That is why we offer
+                a 100% satisfaction guarantee. If you are not satisfied with the
+                product you have received, then you do not have to pay for the
+                product.
               </p>
               <Link href="/" scroll={false}>
                 <a className="inline-flex px-8 py-3 mt-8 text-base font-medium text-black bg-white border border-transparent rounded-md bg-opacity-30 hover:bg-opacity-50 sm:w-auto">
@@ -202,7 +231,7 @@ export default function Home() {
                   Sign up for our newsletter
                 </h2>
                 <p className="max-w-3xl mt-4 text-lg text-black">
-                  Anim aute id magna aliqua ad fugiat.
+                  Be the first to know about new products.
                 </p>
               </div>
               <div className="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 lg:flex-1">
