@@ -13,8 +13,7 @@ interface PageProps extends MetaProps {
 }
 
 export const Page: FC<PageProps> = ({ className, children, ...newProps }) => {
-  const { pathname, asPath } = useRouter()
-  const isHome = pathname === '/'
+  const { asPath } = useRouter()
 
   const { meta: props, site } = siteConfig
   const meta = Object.assign({}, props, { ...newProps })
@@ -42,16 +41,7 @@ export const Page: FC<PageProps> = ({ className, children, ...newProps }) => {
         )}
       </Head>
       <Navbar />
-      <main
-        className={cn(
-          {
-            'pt-16': !isHome,
-          },
-          className
-        )}
-      >
-        {children}
-      </main>
+      <main className={cn('pt-16', className)}>{children}</main>
       <Footer />
     </>
   )
