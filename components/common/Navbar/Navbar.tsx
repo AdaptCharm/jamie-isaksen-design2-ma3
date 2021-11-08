@@ -8,10 +8,10 @@ import { Logo } from '@components/icons'
 
 const navigation = {
   pages: [
-    { name: 'Decorations', href: '/' },
-    { name: 'Vases', href: '/' },
-    { name: 'Pillows', href: '/' },
-    { name: 'Blankets', href: '/' },
+    { name: 'Products', href: '/' },
+    { name: 'Inspiration', href: '/' },
+    { name: 'Blog', href: '/' },
+    { name: 'About', href: '/' },
   ],
 }
 
