@@ -85,24 +85,6 @@ export default function Home() {
               </a>
             </Link>
           </Container>
-          {/* Content */}
-          <div className="absolute flex flex-col items-center max-w-3xl px-6 py-32 mx-auto text-center sm:py-64 lg:px-0">
-            <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl">
-              <span className="block text-black">A better way to</span>
-              <span className="block text-white drop-shadow">
-                shop home decor
-              </span>
-            </h1>
-            <p className="mt-6 text-xl text-black">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <Link href="/products">
-              <a className="inline-block px-8 py-3 mt-8 text-base font-semibold text-black bg-white border border-transparent rounded-md bg-opacity-30 hover:bg-opacity-50">
-                View Products
-              </a>
-            </Link>
-          </div>
         </div>
       </Element>
 
