@@ -11,7 +11,6 @@ const navigation = {
     { name: 'Products', href: '/products' },
     { name: 'Inspiration', href: '#' },
     { name: 'Blog', href: '#' },
-    { name: 'About', href: '#' },
   ],
 }
 
