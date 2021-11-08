@@ -57,6 +57,7 @@ export default function Home() {
               src="/hero/hero-sm.jpeg"
               alt="Hero image"
               layout="responsive"
+              priority={true}
             />
           </div>
 
@@ -70,6 +71,7 @@ export default function Home() {
               src="/hero/hero-md.jpeg"
               alt="Hero image"
               layout="responsive"
+              priority={true}
             />
           </div>
           <div className="absolute inset-0 bg-black bg-opacity-50" />
