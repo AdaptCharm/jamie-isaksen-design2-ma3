@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import {
   ShieldCheckIcon,
@@ -11,7 +12,7 @@ import { filterByValue } from '@lib/collections'
 
 import { ProductCard } from '@components/product'
 
-import { Container, Element, Text, Button, Link } from '@components/ui'
+import { Container, Element, Text, Button } from '@components/ui'
 
 import Page from '@components/Page'
 
@@ -79,11 +80,6 @@ export default function Home() {
             <p className="max-w-3xl mt-6 text-xl text-white">
               Free shipping on all home decorations.
             </p>
-            <Link href="/products">
-              <a className="inline-block px-8 py-3 mt-8 text-base font-semibold text-black bg-white border border-transparent rounded-md bg-opacity-30 hover:bg-opacity-50">
-                View Products
-              </a>
-            </Link>
           </Container>
         </div>
       </Element>
@@ -130,7 +126,7 @@ export default function Home() {
 
       {/* Featured section */}
       <section aria-labelledby="comfort-heading">
-        <div className="relative bg-gradient-to-r from-cyan-400 to-teal-200">
+        <div className="relative bg-gray-50">
           <div className="relative px-6 py-32 sm:py-40 sm:px-12 lg:px-16">
             <div className="relative flex flex-col items-center max-w-3xl mx-auto text-center">
               <h2
@@ -145,11 +141,15 @@ export default function Home() {
                 product you have received, then you do not have to pay for the
                 product.
               </p>
-              <Link href="/" scroll={false}>
-                <a className="inline-flex px-8 py-3 mt-8 text-base font-medium text-black bg-white border border-transparent rounded-md bg-opacity-30 hover:bg-opacity-50 sm:w-auto">
+              <div className="mt-8">
+                <Button
+                  size="large"
+                  variant="primary"
+                  className="min-w-[150px]"
+                >
                   Read more
-                </a>
-              </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -171,9 +171,9 @@ export default function Home() {
                     key={incentive.name}
                     className="text-center sm:flex sm:text-left lg:block lg:text-center"
                   >
-                    <span className="inline-flex items-center justify-center p-3 rounded-md shadow-lg bg-gradient-to-r from-teal-200 to-cyan-400">
+                    <span className="inline-flex items-center justify-center p-3 rounded-md shadow-lg bg-black">
                       <incentive.icon
-                        className="w-6 h-6 text-black"
+                        className="w-6 h-6 text-white"
                         aria-hidden="true"
                       />
                     </span>
@@ -196,23 +196,13 @@ export default function Home() {
       {/* Newsletter section */}
       <div className="bg-white">
         <div className="px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="relative px-6 py-10 overflow-hidden rounded-3xl sm:py-16 sm:px-12 lg:p-20">
-            <div className="flex-shrink-0">
-              <Image
-                className="object-cover object-center w-full h-full"
-                placeholder="blur"
-                blurDataURL="/gradients/gradient-2.jpg"
-                src="/gradients/gradient-2.jpg"
-                alt="Gradient 2."
-                layout="fill"
-              />
-            </div>
+          <div className="relative bg-black px-6 py-10 overflow-hidden rounded-3xl sm:py-16 sm:px-12 lg:p-20">
             <div className="relative lg:flex lg:items-center">
               <div className="lg:w-0 lg:flex-1">
-                <h2 className="text-3xl font-extrabold tracking-tight text-black">
+                <h2 className="text-3xl font-extrabold tracking-tight text-white">
                   Sign up for our newsletter
                 </h2>
-                <p className="max-w-3xl mt-4 text-lg text-black">
+                <p className="max-w-3xl mt-4 text-lg text-gray-200">
                   Be the first to know about new products.
                 </p>
               </div>
@@ -226,20 +216,21 @@ export default function Home() {
                     type="email"
                     autoComplete="new-email"
                     required
-                    className="w-full px-5 py-3 text-black placeholder-gray-500 transition-colors duration-200 border-white rounded-md focus:outline-none focus:ring-0 focus:border-teal-200 focus:border-opacity-90"
+                    className="w-full px-5 py-2 text-black placeholder-gray-500 transition-colors duration-200 border-white rounded-md focus:outline-none focus:ring-0 focus:border-black"
                     placeholder="Enter your email"
                   />
-                  <button
-                    type="submit"
-                    className="flex items-center justify-center w-full px-5 py-3 mt-3 text-base font-medium text-black bg-white border border-transparent rounded-md bg-opacity-30 hover:bg-opacity-50 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
+                  <Button
+                    size="large"
+                    ghost
+                    className="w-full px-5 py-3 mt-3 sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
                   >
                     Notify me
-                  </button>
+                  </Button>
                 </form>
-                <p className="mt-3 text-sm text-black">
+                <p className="mt-3 text-sm text-white">
                   We care about the protection of your data. Read our{' '}
                   <Link href="/" scroll={false}>
-                    <a className="font-medium text-black underline">
+                    <a className="font-medium text-white underline">
                       Privacy Policy.
                     </a>
                   </Link>

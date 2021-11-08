@@ -13,6 +13,7 @@ export interface ButtonProps<C extends ButtonComponentType = 'button'> {
   href?: string
   className?: string
   variant?: 'primary' | 'secondary'
+  ghost?: boolean
   size?: 'small' | 'medium' | 'large'
   shape?: 'square' | 'circle'
   active?: boolean
@@ -41,6 +42,7 @@ const Button: ButtonFC = ({
   active,
   children,
   variant = 'primary',
+  ghost,
   Component = 'button',
   disabled = false,
   loading = false,
@@ -59,6 +61,7 @@ const Button: ButtonFC = ({
     [s[`${shape}`]],
     {
       [s.shape]: shape,
+      [s.ghost]: ghost,
       [s.disabled]: disabled,
     },
     className

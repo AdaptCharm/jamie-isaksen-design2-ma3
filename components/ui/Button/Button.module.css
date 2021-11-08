@@ -1,6 +1,5 @@
 .reset {
   outline: none;
-  margin: 0;
   font-family: inherit;
   vertical-align: middle;
   text-decoration: none;
@@ -33,6 +32,15 @@
 .primary:hover {
   box-shadow: none;
   @apply bg-white text-black border-black;
+}
+
+.primary.ghost {
+  @apply bg-white text-black;
+}
+
+.primary.ghost:hover {
+  box-shadow: none;
+  @apply bg-black text-white border-white;
 }
 
 .secondary {

@@ -3,7 +3,7 @@ import type { FC } from 'react'
 const Footer: FC = () => {
   return (
     <footer
-      className="bg-white border-t border-gray-100"
+      className="bg-gray-50 border-t border-gray-200"
       aria-labelledby="footer-heading"
     >
       <h2 className="sr-only" id="footer-heading">

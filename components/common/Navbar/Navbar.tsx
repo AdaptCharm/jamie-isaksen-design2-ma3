@@ -8,10 +8,10 @@ import { Logo } from '@components/icons'
 
 const navigation = {
   pages: [
-    { name: 'Products', href: '/' },
-    { name: 'Inspiration', href: '/' },
-    { name: 'Blog', href: '/' },
-    { name: 'About', href: '/' },
+    { name: 'Products', href: '/products' },
+    { name: 'Inspiration', href: '#' },
+    { name: 'Blog', href: '#' },
+    { name: 'About', href: '#' },
   ],
 }
 
@@ -50,13 +50,13 @@ const Navbar: FC = () => {
           {/* Right nav */}
           <div className="flex justify-end flex-1">
             <div className="flex items-center space-x-8">
-              <Link href="/">
+              <Link href="#">
                 <a className="hidden text-sm font-semibold text-black transition-opacity duration-200 ease-in-out hover:opacity-40 lg:block">
                   Sign in
                 </a>
               </Link>
 
-              <Link href="/">
+              <Link href="#">
                 <a className="hidden text-sm font-semibold text-black transition-opacity duration-200 ease-in-out hover:opacity-40 lg:block">
                   Create an account
                 </a>
@@ -64,7 +64,7 @@ const Navbar: FC = () => {
 
               {/* Cart */}
               <div className="flow-root">
-                <Link href="/">
+                <Link href="#">
                   <a className="flex items-center px-3 py-1.5 -m-2 bg-black rounded-full bg-opacity-5 hover:bg-opacity-10">
                     <ShoppingBagIcon
                       className="flex-shrink-0 w-6 h-6 text-black"
