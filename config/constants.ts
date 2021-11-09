@@ -6,7 +6,7 @@ export const siteConfig = {
   meta: {
     title: 'Home',
     description: `The Design 2 Module Assignment 3.`,
-    image: 'https://leerob.io/static/images/banner.png',
+    image: 'https://jamie-isaksen-design2-ma3.vercel.app/hero/hero-md.jpeg',
     type: 'website',
   },
 }
